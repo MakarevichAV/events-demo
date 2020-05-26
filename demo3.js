@@ -1,5 +1,3 @@
-window.addEventListener('load', () => {
-   
     const audio = document.querySelector('audio');
     const picture = document.querySelector('img');
 
@@ -9,5 +7,3 @@ window.addEventListener('load', () => {
     audio.addEventListener('pause', () => {
         picture.style.display = 'none';
     });
-
-});
