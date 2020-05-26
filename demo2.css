@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@keyframes turn {
+    0% {
+        
+    }
+    50% {
+        transform: rotate3d(0, 1, 0, 90deg);
+    }
+    100% {
+        transform: rotate3d(0, 1, 0, 0deg);
+    }
+}
+
+@keyframes displayNone {
+    0% {
+        opacity: 1;
+    }
+    49% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-block {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 0px #acacac;
+    margin: 0 30px;
+    background: url(./images/jocker.jpg) no-repeat center center / contain;
+}
+
+.img-block:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    background: url(./images/rubashka.jpg) no-repeat center center / cover;
+    transition: 1s;
+}
+
+.point:before {
+    opacity: 0;
+}
+
+.animate {
+    animation: turn 1s;
+}
+
+.animate:before {
+    opacity: 0;
+    animation: displayNone 1s;
+}
+
+
+h1 {
+    text-align: center;
+    color: #6b6b6b;
+}
+
+img {
+    display: none;
+    margin: 20px auto;
+}
+
+
+
+.nav-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: rgb(85, 167, 64);
+    color: white;
+}
+
+.deactive {
+    background: rgb(189, 189, 189);
+    color: white;
+    cursor: initial;
+}
